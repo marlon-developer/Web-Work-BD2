@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+</head>
+<body>
+	<form method="POST" action="cadastrarPessoa.php">
+		<input type="text" name="nome" placeholder="Nome" autofocus required>
+			
+		<input type="date" name="data_nascimento" placeholder="Data Nascimento" required>
+			
+		Masculino <input type="radio" name="sexo" value="M" checked>
+
+		Femino <input type="radio" name="sexo" value="F">
+
+		<input type="email" name="email" placeholder="email">
+
+		<input type="senha" name="senha" placeholder="Senha" required>
+
+		<input type="senha" name="confirmar_senha" placeholder="Repita a Senha" required>
+
+		<button type="submit">Cadastrar</button>
+		<button type="reset">Limpar</button>
+	</form>
+</body>
+</html>
