@@ -51,18 +51,10 @@
 			//pega o id dela no banco. Caso n'ao exista, insere ela no banco
 			//e pega o id da marca inserida		
 
-			//id Promocao
-			/*$query_promocao = "SELECT idPromocao FROM PROMOCAO";
-			if($resultado->num_rows > 0){
-				// mostra os dados de cada linha retornada
-				while($linha = $resultado->fetch_assoc()) {
-					echo $id_promocao = $linha['idPromocao'];
-				}
-			}*/
 
 
 			//Busca idMarca
-			$query_marca = "SELECT idMarca FROM Marca WHERE nome = '$marca'";
+			$query_marca = "SELECT idMarca FROM MARCA WHERE nome_marca = '$marca'";
 			$resultado = $this->conexao->query($query_marca);
 			//se obtivemos algum retorno do select
 			if($resultado->num_rows > 0){
@@ -75,59 +67,47 @@
 			else{
 
 				//Inserir Marca
-				$query_inserir_marca = "INSERT INTO MARCA(nome) VALUES('$marca')";
+				$query_inserir_marca = "INSERT INTO MARCA(nome_marca) VALUES('$marca')";
 				//executa o sql
 				$this->conexao->query($query_inserir_marca);
 				//pega o id da marca inserida
 				$id_marca = $this->conexao->insert_id;
 			}
 
-			$query_inserir_produto = "INSERT INTO PRODUTO(nome, valor, categoria, idPessoa , idMarca, idPromocao) 
-				VALUES ('$nome', '$valor', '$categoria', '$id_pessoa', '$id_marca')";
+			$query_inserir_produto = "INSERT INTO PRODUTO(nome, valor, categoria, dataPublicacao, idPessoa , idMarca) 
+				VALUES ('$nome', '$valor', '$categoria', CURDATE(), '$id_pessoa', '$id_marca')";
 			$this->conexao->query($query_inserir_produto);
 		}
-		
-		
-		/*function consultarProduto(){
-		    //$sql = "SELECT nome, valor, categoria from Produto";  
-		    $sql = "SELECT nome, valor, marca, dataPublicacao, categoria
-		    FROM vw_imprimir_produto;";  
-			$resultado = $this->conexao->query($sql);
-			//se obtivemos algum retorno do select
-			if($resultado->num_rows > 0){
-				// mostra os dados de cada linha retornada
-				while($linha = $resultado->fetch_assoc()) {
-					echo "<tr>".
-							"<td>" . "Contador." ."</td>". 
-							"<td>" . $linha["nome"] ."</td>". 
-							"<td>" .$linha["valor"] ."</td>".
-							"<td>Marca ainda por Arrumar" ."</td>".
-							"<td>Data ainda por Arrumar" ."</td>".
-							"<td>" .$linha["categoria"]."</td>".
-						 "</tr>";
-				}
-			}
-			else echo "Nenhum resultado encontrado";
-		}*/
+
 
 		function consultarProduto(){
 		    //$sql = "SELECT nome, valor, categoria from Produto";  
-		    $sql = "SELECT nome, valor, categoria, idMarca, idPromocao
-		    FROM PRODUTO;";  
+		    $sql = "SELECT nome, valor, nome_marca, dataPublicacao, categoria FROM vw_imprimir_produto";  
 			$resultado = $this->conexao->query($sql);
 			//se obtivemos algum retorno do select
 			if($resultado->num_rows > 0){
 				// mostra os dados de cada linha retornada
 				while($linha = $resultado->fetch_assoc()) {
 					echo "<tr>".
-							"<td>" . "Contador." ."</td>". 
-							"<td>" .$linha["nome"] ."</td>". 
-							"<td>" .$linha["valor"] ."</td>".
+							"<td>" .$linha["nome"] ."</td>".
+							"<td>" .$linha["valor"] ."</td>". 
+							"<td>" .$linha["nome_marca"] ."</td>".
+							"<td>" .date('d-m-Y', strtotime($linha["dataPublicacao"])) ."</td>".
 							"<td>" .$linha["categoria"]."</td>".
 						 "</tr>";
 				}
 			}
-			else echo "Nenhum resultado encontrado";
+			else  "Erro!";		
+		}
+
+		function buscar($nome){
+			// Consulta do id, nome e sobrenome de todas as pessoas da tabela com o $nome
+			$sql = "SELECT * FROM Produto WHERE nome like '%$nome%'";
+			$resultado = $this->conexao->query($sql);
+			//se obtivemos algum retorno do select
+			return $resultado;
+				header("location:index.php?loginSucesso=1");
+
 		}
 
 		function login($email, $senha){

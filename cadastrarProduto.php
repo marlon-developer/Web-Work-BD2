@@ -13,7 +13,7 @@
 		if (isset($_POST['categoria'])) $categoria = $_POST['categoria'];
 
 		$db->inserirProduto($nome, $valor, $categoria, $marca, $_SESSION['idPessoa']);
-		header("location:index.php");	
+		header("location:index.php?loginSucesso=1");	
 	}
 	else{
 		echo "Voce nao esta logado";
