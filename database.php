@@ -26,6 +26,8 @@
 		}
 
 		function inserirPessoa($nome, $data_nascimento, $sexo, $email, $senha){
+
+			//$senha_c = password_hash($senha, PASSWORD_DEFAULT);
 			$senha_c = sha1(
 					   sha1("criptografia_nivel.1".
 					   sha1("nivel_2".
@@ -103,8 +105,18 @@
 		}
 
 		function login($email, $senha){
+
+			$senha_c = sha1(
+					   sha1("criptografia_nivel.1".
+					   sha1("nivel_2".
+					   sha1("n3.criptografia".
+					   sha1("hello.4n".
+					   sha1("criptografado_comsucesso".$senha))))));
+
+			echo $senha_c;
+
 			// Consulta do id, email e senha dos usuarios
-			$sql = "SELECT email, senha, idPessoa FROM PESSOA WHERE email = '$email' and senha = '$senha';";
+			$sql = "SELECT email, senha, idPessoa FROM PESSOA WHERE email = '$email' and senha = '$senha_c';";
 			$resultado = $this->conexao->query($sql);
 			//se obtivemos algum retorno do select
 			if($resultado->num_rows > 0){
@@ -117,6 +129,20 @@
 				return -1;
 				//echo "Nenhum resultado encontrado";
 			}
+
+			
+			// Consulta do id, email e senha dos usuarios
+			/*$sql = "SELECT email, senha, idPessoa FROM PESSOA WHERE email = '$email'";
+			$resultado = $this->conexao->query($sql);
+			$linha = $resultado->fetch_assoc();
+			$senha_c = $linha['senha'];
+			if(password_verify($senha, $senha_c)){
+				return $linha['idPessoa'];
+			}
+			else{
+				return -1;
+			}*/
+
 		}
 		
 	}

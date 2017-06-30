@@ -124,7 +124,7 @@ CREATE TABLE `MARCA` (
   `idMarca` int(11) NOT NULL AUTO_INCREMENT,
   `nome_marca` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`idMarca`)
-) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=27 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -133,7 +133,7 @@ CREATE TABLE `MARCA` (
 
 LOCK TABLES `MARCA` WRITE;
 /*!40000 ALTER TABLE `MARCA` DISABLE KEYS */;
-INSERT INTO `MARCA` VALUES (1,'mmm'),(2,'uuu'),(3,'gggg'),(4,'Nestle'),(5,'chupalupipato'),(6,'chupachupitos'),(7,'bombril'),(8,'oppapaa'),(9,'ksopas'),(10,'pppp'),(11,'lll'),(12,'Ovo'),(13,'ooo'),(14,'dfg'),(15,'SANTA ');
+INSERT INTO `MARCA` VALUES (1,'mmm'),(2,'uuu'),(3,'gggg'),(4,'Nestle'),(5,'chupalupipato'),(6,'chupachupitos'),(7,'bombril'),(8,'oppapaa'),(9,'ksopas'),(10,'pppp'),(11,'lll'),(12,'Ovo'),(13,'ooo'),(14,'dfg'),(15,'SANTA '),(16,'juvenencio'),(17,'jjijij'),(18,'sdfg'),(19,'lklkkk'),(20,'llll'),(21,'lllllll'),(22,'kkkkk'),(23,'lklklllk'),(24,'sdf'),(25,'dove'),(26,'ttt');
 /*!40000 ALTER TABLE `MARCA` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -152,7 +152,7 @@ CREATE TABLE `PESSOA` (
   `email` varchar(45) NOT NULL,
   `senha` varchar(100) NOT NULL,
   PRIMARY KEY (`idPessoa`)
-) ENGINE=InnoDB AUTO_INCREMENT=29 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -161,7 +161,7 @@ CREATE TABLE `PESSOA` (
 
 LOCK TABLES `PESSOA` WRITE;
 /*!40000 ALTER TABLE `PESSOA` DISABLE KEYS */;
-INSERT INTO `PESSOA` VALUES (1,'MARLON DA ROSA','1992-10-28','M','marlonti17@gmail.com','123'),(2,'Ariel','1992-10-28','M','arielalmeida@zipline.com','123'),(3,'kkk','4321-03-12','M','mstk@2KKK.com','123'),(4,'hjhj','5678-08-07','M','hhj@jj.com','123'),(5,'hjhj','1234-03-12','M','fL@gk.com',''),(6,'hgj','1234-02-12','M','kk@ff.cc','202cb962ac59075b964b07152d234b70'),(7,'kjh','1234-12-12','M','dfk@fkk.com',''),(8,'jkljkl','1234-12-02','M','sadkl@dsakl.com','d8aaf31be10e7f3c7290e781ad67e27c'),(9,'klj','0124-12-12','M','mskldf@fklsj.com',''),(10,'hghj','7878-08-07','M','oer@kl.com',''),(11,'jkjk','0000-00-00','M','2122@kl.com','9c15c36515870e33f7752cab6293bca9'),(12,'kj','1221-12-21','M','KJKL@LK.COM','40bd001563085fc35165329ea1ff5c5ecbdbbeef'),(13,'teste_sha1','2828-08-28','M','kel@kel.com','40bd001563085fc35165329ea1ff5c5ecbdbbeef'),(14,'novousuario','1221-12-28','M','lfkd@mm.com','40bd001563085fc35165329ea1ff5c5ecbdbbeef'),(15,'sha1','1212-02-21','M','22@kk.com','8b6ecfcc795363e21e0cced02eaacf22b9ba867b'),(16,'novo_sha1','1212-12-12','M','rr@mm.com','8b6ecfcc795363e21e0cced02eaacf22b9ba867b'),(17,'md5','1212-12-21','M','mm@mm.com','202cb962ac59075b964b07152d234b70'),(18,'novo_md5','2112-12-21','M','novo_md5@cript.com','202cb962ac59075b964b07152d234b70'),(19,'teste','1212-12-21','M','teste@teste.com','(fa109667e0938f74092be166f5c6ac17fba8d751)'),(20,'cripto','2121-02-21','M','cripto@cripto.com','(d80ec6f4b2729a59f27b502049e6ec6ffef86d29)'),(21,'cccc','1212-12-21','M','cc@cccc.com','()'),(22,'jkhhklh','7978-09-08','M','iuiu@jhkhhj','()'),(23,'nm,','0121-02-21','M','jkhs@jkh.com','(0043788a2f6a50b27429c88be35628f6b6d7d92d)'),(24,'mnbnbmnmbnmb','9898-09-08','M','IUO2iuo2K@KJL.CONM','5868d01dd8bfce34a99a2718c89d47ef088d005f'),(25,'kkk','1212-12-21','M','marlonkjl@lkj.com','dcd29b1761400f0a6cb288c745e4b887b632ea5c'),(26,'kkk','1212-12-21','M','marlonkjl@lkj.com','dcd29b1761400f0a6cb288c745e4b887b632ea5c'),(27,'kkk','1212-12-21','M','marlonkjl@lkj.com','dcd29b1761400f0a6cb288c745e4b887b632ea5c'),(28,'Joao','1993-10-28','M','joao@joao.com.br','99597cdc76de4d1b65c1ff1608de6d8cd4b5975f');
+INSERT INTO `PESSOA` VALUES (1,'Marlon','2017-12-30','F','a@a.a','$2y$10$kGxKOVey3vPHBt6OAHTsnubX5IMujS4m0mg2UIPENHn'),(2,'Marlon','2017-12-31','M','b@b.b','8b6ecfcc795363e21e0cced02eaacf22b9ba867b');
 /*!40000 ALTER TABLE `PESSOA` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -181,7 +181,7 @@ CREATE TABLE `PRODUTO` (
   `idPessoa` int(11) NOT NULL,
   `idMarca` int(11) NOT NULL,
   PRIMARY KEY (`idProduto`)
-) ENGINE=InnoDB AUTO_INCREMENT=31 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=38 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -190,7 +190,7 @@ CREATE TABLE `PRODUTO` (
 
 LOCK TABLES `PRODUTO` WRITE;
 /*!40000 ALTER TABLE `PRODUTO` DISABLE KEYS */;
-INSERT INTO `PRODUTO` VALUES (1,'Banana ',2.00,'Alimento',NULL,0,0),(2,'kk',1.24,'Alimento',NULL,0,0),(3,'ooo',2.25,'Alimento',NULL,0,0),(4,'jkhdf',4356.00,'Higiene',NULL,0,0),(5,'jhfdkjk',324.00,'Higiene',NULL,0,0),(6,'uma banana',123.00,'Limpeza',NULL,0,0),(7,'teste',999999.00,'Limpeza',NULL,0,0),(8,'teste10',1.50,'Higiene',NULL,0,0),(9,'teste10',1.50,'Higiene',NULL,0,0),(10,'teste11',1.00,'Alimento',NULL,0,0),(11,'teste11',1.00,'Alimento',NULL,0,0),(12,'ppp',12.00,'Alimento',NULL,1,1),(13,'teste15',23.00,'Alimento',NULL,1,2),(14,'teste15',23.00,'Alimento',NULL,1,2),(15,'pppppppp',12.00,'Alimento',NULL,1,3),(16,'blabla',1.00,'Alimento',NULL,1,6),(17,'Detergente',1.50,'Alimento',NULL,1,7),(18,'kmkimi',89889.00,'Higiene',NULL,1,0),(19,'123',2.00,'Alimento',NULL,1,0),(20,'wwww',222.00,'Bebida',NULL,1,0),(21,'teste00',123.00,'Bebida',NULL,1,0),(22,'agua',12345.00,'Bebida',NULL,1,0),(23,'teste00',1.00,'Higiene',NULL,1,0),(24,'teste01',2.00,'Higiene',NULL,1,8),(25,'chovechuva',12345.00,'Bebida',NULL,1,9),(26,'teste02',12.00,'Alimento',NULL,1,10),(27,'teste03',1.00,'Alimento',NULL,1,11),(28,'teste05',5.00,'Alimento','2017-06-22',1,13),(29,'teste06',3.00,'Alimento','2017-06-22',1,14),(30,'SANTA MARIA ',234.00,'Higiene','2017-06-22',1,15);
+INSERT INTO `PRODUTO` VALUES (1,'Banana ',2.00,'Alimento',NULL,0,0),(2,'kk',1.24,'Alimento',NULL,0,0),(3,'ooo',2.25,'Alimento',NULL,0,0),(4,'jkhdf',4356.00,'Higiene',NULL,0,0),(5,'jhfdkjk',324.00,'Higiene',NULL,0,0),(6,'uma banana',123.00,'Limpeza',NULL,0,0),(7,'teste',999999.00,'Limpeza',NULL,0,0),(8,'teste10',1.50,'Higiene',NULL,0,0),(9,'teste10',1.50,'Higiene',NULL,0,0),(10,'teste11',1.00,'Alimento',NULL,0,0),(11,'teste11',1.00,'Alimento',NULL,0,0),(12,'ppp',12.00,'Alimento',NULL,1,1),(13,'teste15',23.00,'Alimento',NULL,1,2),(14,'teste15',23.00,'Alimento',NULL,1,2),(15,'pppppppp',12.00,'Alimento',NULL,1,3),(16,'blabla',1.00,'Alimento',NULL,1,6),(17,'Detergente',1.50,'Alimento',NULL,1,7),(18,'kmkimi',89889.00,'Higiene',NULL,1,0),(19,'123',2.00,'Alimento',NULL,1,0),(20,'wwww',222.00,'Bebida',NULL,1,0),(21,'teste00',123.00,'Bebida',NULL,1,0),(22,'agua',12345.00,'Bebida',NULL,1,0),(23,'teste00',1.00,'Higiene',NULL,1,0),(24,'teste01',2.00,'Higiene',NULL,1,8),(25,'chovechuva',12345.00,'Bebida',NULL,1,9),(26,'teste02',12.00,'Alimento',NULL,1,10),(27,'teste03',1.00,'Alimento',NULL,1,11),(28,'teste05',5.00,'Alimento','2017-06-22',1,13),(29,'teste06',3.00,'Alimento','2017-06-22',1,14),(30,'SANTA MARIA ',234.00,'Higiene','2017-06-22',1,15),(31,'mais um',1.00,'Limpeza','2017-06-26',1,17),(32,'agua',1.00,'Alimento','2017-06-26',1,1),(33,'Procedure 00',1.00,'Alimento','2017-06-26',0,0),(34,'Chuva',1.00,'Alimento','2017-06-26',0,0),(35,'fogo',1234.00,'Alimento','2017-06-26',1,24),(36,'sabonete',2.00,'Higiene','2017-06-27',1,25),(37,'Vassoura',10.00,'Limpeza','2017-06-27',2,26);
 /*!40000 ALTER TABLE `PRODUTO` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -356,4 +356,4 @@ SET character_set_client = @saved_cs_client;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-06-26 12:00:42
+-- Dump completed on 2017-06-27 19:19:44
